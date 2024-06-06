@@ -159,7 +159,9 @@ class OptionalPackages
         $runtimeDir = $this->projectRoot . '/runtime';
 
         if (! is_dir($runtimeDir)) {
-            mkdir($runtimeDir, 0775, true);
+            if (!mkdir($runtimeDir, 0775, true) && !is_dir($runtimeDir)) {
+                throw new \RuntimeException(sprintf('Directory "%s" was not created', $runtimeDir));
+            }
             chmod($runtimeDir, 0775);
         }
     }

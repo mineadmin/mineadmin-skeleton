@@ -259,26 +259,6 @@ return [
                 ],
             ],
         ],
-        'model-cache' => [
-            'question' => 'Do you want to use hyperf/model-cache component ?',
-            'default' => 'n',
-            'required' => false,
-            'force' => true,
-            'custom-package' => true,
-            'options' => [
-                'y' => [
-                    'name' => 'yes',
-                    'packages' => [
-                        'hyperf/model-cache',
-                    ],
-                    'resources' => [
-                        'resources/model_cache/Model.php' => 'app/Model/Model.php',
-                        'resources/model_cache/databases.php' => 'config/autoload/databases.php',
-                        'resources/database/redis.php' => 'config/autoload/redis.php',
-                    ],
-                ],
-            ],
-        ],
         'elasticsearch' => [
             'question' => 'Do you want to use hyperf/elasticsearch component ?',
             'default' => 'n',
